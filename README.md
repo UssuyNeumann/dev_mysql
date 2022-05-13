@@ -1,2 +1,2 @@
-# dev_mysql
-Rotinas com sintaxe MySQL
+# dev_mysql :dolphin:
+Rotinas com sintaxe MySQL dolpin
