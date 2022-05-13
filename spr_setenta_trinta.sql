@@ -1,0 +1,17 @@
+DELIMITER $$
+CREATE PROCEDURE SPR_SETENTA_TRINTA(
+	IN P_VALOR VARCHAR(20) 
+)
+BEGIN 
+
+	SET P_VALOR = CAST(REPLACE(P_VALOR,',','.') AS DOUBLE);
+
+	SELECT 
+		(P_VALOR *0.7) AS '70', 
+		(P_VALOR *0.3) AS '30% Investimento', 
+		CAST(((P_VALOR *0.7) / 7 ) * (5) + ((P_VALOR*0.1) / 2) AS DECIMAL(18,2)) AS '55% Essencial', 
+		CAST((P_VALOR *0.1) / 2 AS DECIMAL(18,2)) AS '5% Edu', 
+		CAST((P_VALOR *0.1) AS DECIMAL(18,2)) AS '10% Livre';
+    
+END $$
+DELIMITER;
